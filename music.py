@@ -10,6 +10,7 @@ class loopqueue:
 
   def __init__(self,lp):
     self.loop = lp
+    #might just implement this as a list later
     self.line = deque()
   def get(self):
     return self.line.popleft()
@@ -214,7 +215,7 @@ class music(commands.Cog):
   @commands.command()
   async def shuffle(self,ctx):
     #empty deque into list at random indices then refill deque
-    #change to nly shuffle indices 1...n
+    #change to only shuffle indices 1...n
     index_list = []
     for i in range(self.musicqueue.qsize()):
       index_list.append(i)
